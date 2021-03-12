@@ -26,3 +26,46 @@ li {
   list-style-type: none; /*去除list的弹头 */
   text-shadow: 2px 2px #e9e9e9; /*添加阴影horizontal, vertical, color*/
 }
+
+/* attribute selector */
+
+a[href] {
+  /*选中所有含有href attribute的元素*/
+  background-color: #3dd13d;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* a[href*="www"] :  包含 www */
+
+a[href="https://www.google.ca/"]
+{
+  /*选中具体的href attribute*/
+  background-color: crimson;
+}
+
+/* 
+
+inheritance继承: 内部的element会继承inherit外部element的CSS, 如 <div> <p> Example </p> </div>
+对<div>的CSS会作用到<p>中
+
+可以继承:  color, font
+不可以继承: border, margin, padding
+
+
+如果内部element想继承border margin的话：
+
+div{
+    color: red;
+    border: 1px solid grey;
+    margin: 40px;
+}
+
+p{
+    border: inherit;
+    margin: inherit;
+}
+
+*/
