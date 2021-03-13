@@ -1,0 +1,157 @@
+body,
+ul,
+li,
+h1,
+h2,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+header {
+  background-color: #f63232;
+  padding: 20px; /*header外边框相对于内侧元素h1的距离*/
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /*宽度占据一整行*/
+  z-index: 1; /* z默认值都为0, 正值为bring it forward, 负值为backward*/
+}
+header h1 {
+  color: white;
+  border: 8px solid white;
+  border-radius: 36px; /*圆角*/
+  padding: 6px 12px; /*h1外边框相对于内侧content的距离*/
+  display: inline-block;
+}
+.banner {
+  position: relative;
+}
+
+.banner img {
+  max-width: 100%; /* 最大占据viewport 百分之百的宽度 */
+}
+
+.banner .welcome {
+  background-color: #feb614;
+  color: white;
+  padding: 30px;
+
+  position: absolute;
+  left: 0px; /* 沿着某个方向固定 */
+  top: 30%;
+}
+
+.banner h2 {
+  font-size: 74px;
+}
+
+.banner h2 span {
+  font-size: 1.3em; /*  是上一层字体的1.3倍，即74*1.3 */
+}
+
+nav {
+  background-color: #f4f4f4;
+  padding: 20px;
+  position: sticky;
+  top: 106px;
+}
+
+nav ul {
+  white-space: nowrap; /*去除自带的white space*/
+  max-width: 1200px;
+  margin: 0 auto; /*用来居中*/
+}
+
+nav li {
+  font-size: 24px;
+  width: 25%;
+  display: inline-block;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+nav li a.join {
+  color: red;
+}
+
+main {
+  max-width: 100%; /*防止用户屏幕过小，和最大尺寸匹配*/
+  width: 1200px;
+  margin: 80px auto;
+  padding: 0 40px;
+  box-sizing: border-box; /*让max-width包含padding,防止文字溢出屏幕了*/
+}
+
+article h2 {
+  color: #f63232;
+  font-size: 48px;
+}
+
+article p {
+  line-height: 2em; /*p默认font size 16px 的两倍*/
+  color: #4b4b4b;
+}
+
+.images {
+  text-align: center;
+  margin: 80px 0;
+  list-style-type: none;
+  white-space: nowrap;
+}
+
+.images li {
+  display: inline-block;
+  width: 40%;
+  margin: 20px 5%; /*此时本应占据100的行宽，但是需要去parent去除默认的space*/
+}
+
+.images li img {
+  max-width: 100%; /* 还需设定图片的最大尺寸，默认是full size图片。 100% of the parent container即为40%行宽*/
+}
+
+section.join {
+  background-color: #f4f4f4;
+  color: #4b4b4b;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.join h2 {
+  font-size: 36px;
+}
+
+form input {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 24px;
+  border: 4px solid white;
+  border-radius: 28px;
+}
+
+footer {
+  background-color: #f63232;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 
+
+Position & Layout 位置和布局常用指令
+
+position:
+
+static    默认，什么都不做
+relative  相对初始位置 如 {position: relative; left: 20px; bottom: 20px} 相对初始move away from left and bottom 20px
+fixed     相对viewport位置  如{position: fixed; left: 0px; right: 0px;} 相对viewport固定左上角，当我们scrow时
+absolute  相对cloeset parent(最近的position非static单位)位置, 以前的space不再保存 如 {position: absolute; left: 20px; bottom: 20px} 相对parent左移下移20px
+sticky    是static+fiexd的组合，一开始static什么都不做，当viewport scroll到设定值时，固定在该位置
+
+
+*/
